@@ -1,0 +1,102 @@
+version: 2
+
+models:
+  - name: prep__ad_events
+    description: "Event-level data for user actions on paid ads."
+    columns:
+      - name: unique_row_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: campaign_id
+        description: "The campaign identifier"
+
+      - name: _date
+        description: "Datestamp of the click or impression event"
+
+      - name: event_type
+        description: "The type of event, impression or click"
+
+  - name: prep__landing_page_view
+    description: "Potential customers landing on our marketing site"
+    columns:
+      - name: unique_row_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: cookie_id
+        description: "Identifier for a visitor on the marketing site"
+        data_tests:
+          - not_null
+      
+      - name: campaign_id
+        description: "The campaign identifier"
+
+      - name: date_
+        description: "Datestamp of the visit"
+        data_tests:
+          - not_null
+
+      - name: region
+        description: "Region of the visitor"
+
+      - name: country
+        description: "Country of the visitor"
+
+      - name: city
+        description: "City of the visitor"
+        
+
+  - name: prep__home_users
+    description: "Details of all users who have signed up to our Home product."
+    columns:
+      - name: user_id
+        description: "The primary key for this table, uniquely identifying a user in the backend"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: cookie_id
+        description: "Identifier for a visitor on the marketing site"
+        data_tests:
+          - not_null
+
+      - name: school_account_create_date
+        description: "Datestamp. Null if not a school account"
+
+      - name: current_year_group
+        description: "Grouping based on year"
+
+      - name: signup_year_group
+        description: "Grouping based on signup year"
+
+      - name: trial_start_date
+        description: "Datestamp of the trial start date"
+        data_tests:
+          - not_null
+
+      - name: first_payment_date
+        description: "Datestamp of the first payment date. Null if not converted to paying"
+
+      - name: cancel_date
+        description: "Datestamp of the cancellation date"
+
+      - name: product_name
+        description: "The product name of the user"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['English, Maths and Science', 'Exam Preparation Plus', 'Exam Preparation', '11 plus ready']
+
+      - name: pricing_interval
+        description: "If the account is monthly, yearly or 3-month"
+
+      - name: region
+        description: "The region of the user"
+
+      - name: country
+        description: "The country of the user"

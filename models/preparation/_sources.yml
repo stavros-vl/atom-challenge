@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: ae_raw
+    database: atom-analytics-candidates
+    tables:
+      - name: ad_events
+      - name: landing_page_view
+      - name: home_users
