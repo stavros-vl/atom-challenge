@@ -9,7 +9,7 @@ renamed AS (
      ) as unique_row_id,
      cookie_id,
      campaign_id,
-     ds AS date_,
+     ds AS visit_date,
      region,
      country,
      city

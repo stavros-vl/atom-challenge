@@ -10,7 +10,7 @@ renamed AS (
     SELECT
      CONCAT(campaign_id, '_', CAST(ds AS STRING), '_', event_type, '_', CAST(sequence_number AS STRING)) AS unique_row_id,
      campaign_id,
-     ds AS _date,
+     ds AS event_date,
      event_type
     FROM datasource
          

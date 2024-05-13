@@ -12,12 +12,18 @@ models:
 
       - name: campaign_id
         description: "The campaign identifier"
+        data_tests:
+          - not_null
 
-      - name: _date
+      - name: event_date
         description: "Datestamp of the click or impression event"
+        data_tests:
+          - not_null
 
       - name: event_type
         description: "The type of event, impression or click"
+        data_tests:
+          - not_null
 
   - name: prep__landing_page_view
     description: "Potential customers landing on our marketing site"
@@ -36,7 +42,7 @@ models:
       - name: campaign_id
         description: "The campaign identifier"
 
-      - name: date_
+      - name: visit_date
         description: "Datestamp of the visit"
         data_tests:
           - not_null

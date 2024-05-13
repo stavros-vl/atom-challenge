@@ -33,3 +33,6 @@ models:
     # Config indicated by + and applies to all files under models/example/
     preparation:
       +materialized: view
+
+    transformation:
+      +materialized: table
