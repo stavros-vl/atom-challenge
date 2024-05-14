@@ -34,7 +34,7 @@ models:
           - unique
           - not_null
 
-      - name: cookie_id
+      - name: visitor_id
         description: "Identifier for a visitor on the marketing site"
         data_tests:
           - not_null

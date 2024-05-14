@@ -1,0 +1,100 @@
+version: 2
+
+models:
+  - name: ad_campaign_stats
+    description: "Impressions and clicks data by campaign and date"
+    columns:
+      - name: campaign_id
+        description: "The campaign identifier"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: event_date
+        description: "Datestamp of the click or impression event"
+        data_tests:
+          - not_null
+
+      - name: impressions_num
+        description: "The number of impressions"
+
+      - name: clicks_num
+        description: "The number of clicks"
+        
+  - name: marketing_site_visits
+    description: "First visits to the marketing site"
+    columns:
+      - name: cookie_id
+        description: "Unique identifier for a visitor on the marketing site"
+        data_tests:
+          - unique
+          - not_null
+      
+      - name: campaign_id
+        description: "The campaign identifier. Only populated if the user visited by clicking on a paid ad"
+
+      - name: visit_date
+        description: "Datestamp of the first visit"
+        data_tests:
+          - not_null
+
+      - name: region
+        description: "Region of the visitor"
+
+      - name: country
+        description: "Country of the visitor"
+
+      - name: city
+        description: "City of the visitor"
+
+      - name: is_paid_origin
+        description: "TRUE if the visitor came from a paid ad, FALSE otherwise"
+
+  - name: users_dim
+    description: "All user information with additional dimensions"
+    columns:
+      - name: user_id
+        description: "Unique identifier for a user"
+        data_tests:
+          - unique
+          - not_null
+      
+      - name: visitor_id
+        description: "Visitor to the marketing site identifier"
+
+      - name: trial_start_date
+        description: "Datestamp of the trial start date"
+        data_tests:
+          - not_null
+
+      - name: trial_start_week
+        description: "Datestamp of the trial start week"
+        data_tests:
+          - not_null
+
+      - name: trial_start_month
+        description: "Datestamp of the trial start month"
+        data_tests:
+          - not_null
+
+      - name: is_school_account
+        description: "TRUE if the users has a school account associated, FALSE otherwise"
+
+      - name: has_converted_to_customer
+        description: "TRUE if the users has converted to paid, FALSE otherwise"
+
+      - name: product_name
+        description: "The name of the product"
+
+      - name: user_value_tier
+        description: "Categorizes customers based on the product purchased and its value"
+
+      - name: region
+        description: "The user region"
+
+      - name: country
+        description: "The user country"
+
+  - name: visits_users_dim
+    description: "Combined visits and user information"
+  

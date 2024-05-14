@@ -7,7 +7,7 @@ renamed AS (
      CONCAT(
         cookie_id, '_', COALESCE(CAST(campaign_id AS STRING), 'NA'), '_', ds
      ) as unique_row_id,
-     cookie_id,
+     cookie_id AS visitor_id,
      campaign_id,
      ds AS visit_date,
      region,

@@ -5,15 +5,17 @@ datasource AS (SELECT * FROM {{ ref('prep__landing_page_view') }}
 base AS (
     SELECT
      *,
-     ROW_NUMBER() OVER(PARTITION BY cookie_id ORDER BY visit_date) as row_num
+     ROW_NUMBER() OVER(PARTITION BY visitor_id ORDER BY visit_date) as row_num
     FROM datasource
 ),
 
 final AS (
     SELECT 
-     cookie_id,
+     visitor_id,
      campaign_id,
      visit_date,
+     DATE_TRUNC(visit_date, WEEK(MONDAY)) AS visit_week,
+     DATE_TRUNC(visit_date, MONTH) AS visit_month,
      region,
      country,
      city,
