@@ -2,4 +2,4 @@
 
 
 ### Lineage
-![lineage](https://github.com/stavros-vl/atom-challenge/assets/50328447/0f6d6368-4f29-42f6-b6c7-12ba20a0b9b9)
+![Screenshot 2024-05-15 at 21 23 00](https://github.com/stavros-vl/atom-challenge/assets/50328447/d5906c7a-a4e1-41e4-962a-09d25c106180)
