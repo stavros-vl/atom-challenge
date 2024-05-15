@@ -6,12 +6,15 @@ paid_campaigns AS (
 campaign_performance AS (
     SELECT
      campaign_id,
+     visit_month,
+     country,
+     region,
+     user_value_tier,
      COUNT(visitor_id) AS total_visits,
      COUNT(user_id) AS total_paid_signups,
-     COUNT(CASE WHEN has_converted_to_customer = TRUE THEN user_id END) AS total_paid_customers,
-     ROUND(COUNT(user_id) / COUNT(visitor_id) * 100.0, 2) AS visit_to_signup_conversion_rate
+     COUNT(CASE WHEN has_converted_to_customer = TRUE THEN user_id END) AS total_paid_customers
     FROM paid_campaigns
-    GROUP BY 1
-    ORDER BY 2 DESC
+    GROUP BY 1,2,3,4,5
+    ORDER BY 2
 )
 SELECT * FROM campaign_performance

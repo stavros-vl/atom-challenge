@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: marketing_campaign_performance
+    description: >
+      Performance of paid marketing campaigns broken
+      down by campaign_id, month, country, region,
+      and tier.
+    columns:
+      - name: campaign_id
+        description: "The campaign identifier"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: visit_month
+        description: "Datestamp of the first visit month"
+        data_tests:
+          - not_null
+
+      - name: region
+        description: "The user region"
+
+      - name: country
+        description: "The user country"
+
+      - name: user_value_tier
+        description: "Categorizes customers based on the product purchased and its value"
+
+      - name: total_visits
+        description: "Number of first visits on the marketing site from a paid campaign"
+
+      - name: total_paid_signups
+        description: "Number of signups from paid campaings"
+
+      - name: total_paid_customers
+        description: "Number of customers from paid campaings"
