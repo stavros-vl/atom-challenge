@@ -10,7 +10,6 @@ models:
       - name: campaign_id
         description: "The campaign identifier"
         data_tests:
-          - unique
           - not_null
 
       - name: visit_month

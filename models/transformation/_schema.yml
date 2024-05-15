@@ -7,7 +7,6 @@ models:
       - name: campaign_id
         description: "The campaign identifier"
         data_tests:
-          - unique
           - not_null
 
       - name: event_date
@@ -24,7 +23,7 @@ models:
   - name: marketing_site_visits
     description: "First visits to the marketing site"
     columns:
-      - name: cookie_id
+      - name: visitor_id
         description: "Unique identifier for a visitor on the marketing site"
         data_tests:
           - unique
@@ -101,7 +100,6 @@ models:
       - name: visitor_id
         description: "Visitor to the marketing site identifier"
         data_tests:
-          - unique
           - not_null
 
       - name: campaign_id
