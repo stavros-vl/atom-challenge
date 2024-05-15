@@ -34,3 +34,23 @@ models:
 
       - name: total_paid_customers
         description: "Number of customers from paid campaings"
+
+  
+  - name: marketing_campaign_regions_performance
+    description: >
+      Performance of paid marketing by region. 
+      Only regions with more than 50 signups are considered.
+    columns:
+      - name: region
+        description: "The user region"
+        data_tests:
+          - not_null
+
+      - name: signups
+        description: "Number of user signups"
+
+      - name: conversion_rate
+        description: "Conversion rate from trial to paying customer"
+
+      - name: prct_of_total
+        description: "Percent of total signups"
