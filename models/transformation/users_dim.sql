@@ -1,5 +1,5 @@
 WITH
-base AS (SELECT * FROM atom-analytics-candidates.SVlachos.prep__home_users 
+base AS (SELECT * FROM {{ ref('prep__home_users') }} 
 ),
 
 transformed AS (
