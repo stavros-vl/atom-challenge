@@ -21,6 +21,10 @@ Folder that contains all dbt models for preparing, transforming and presenting d
     -  It appears there is a data quality issue as many users have the exact same number of page views (e.g. 393). Thus the decision is to keep only the first row for each cookie_id as the first visit for each user/cookie_id.
 - 2.514.491 unique users (cookie_ids)
 
-
-
 ### `home_users`
+
+- Each row can be uniquely identified by the id_user
+- Some cookie_ids (324383, 2678099, 159303 for example) seem to have multiple user_ids associated. SOme of them seem to also have user_ids that are sequential and with the same dt_trial_start date. The assumption is that these are mostly valid user_ids but the cookie_id was set on the same device.
+- There are no NULLs in dt_trial_start 
+6552 users who signed-up became a paying customer (dt_first_payment is not null), which means an ~81% conversion rate to paid(!!!)
+- There are also 11 user_ids that have a cancel_date after the dt_first_payment date, which seems like an error in the data/system. I decided to keep them though as it can be that they canceled their free trial earlier but still proceeded to convert to paying customers.
