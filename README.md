@@ -44,8 +44,33 @@ dbt test
 
 Folders under the `/models` directory:
 - `preparation`: Lightly clean, change data types and rename before further transformation downstream. Materialized as views by default.
-- `transformation`: Perform transformations inserting business logic and creating models that can be reused and referenced for various use cases. Materialized as tables by default
+- `transformation`: Perform transformations inserting business logic and creating models that can be reused and referenced for various use cases. Materialized as tables by default.
 - `presentation`: models that perform grouping and aggregation with the goal to either feed into BI tools or perform ad-hoc analyses.
+
+.
+└── atom-challenge/
+    ├── README.md
+    ├── macros
+    ├── models/
+    │   ├── preparation/
+    │   │   ├── _schema.yml
+    │   │   ├── _sources.yml
+    │   │   ├── prep__ad_events.sql
+    │   │   ├── prep__home_users.sql
+    │   │   └── prep__landing_page_view.sql
+    │   ├── transformation/
+    │   │   ├── _schema.yml
+    │   │   ├── ad_campaign_stats.sql
+    │   │   ├── marketing_site_visits.sql
+    │   │   ├── users_dim.sql
+    │   │   └── visits_users_dim.sql
+    │   └── presentation/
+    │       ├── _schema.yml
+    │       ├── marketing_campaign_performance.sql
+    │       └── marketing_campaign_regions_performance.sql
+    ├── seeds
+    ├── tests
+    └── dbt_project.yml
 
 ### Lineage
 
