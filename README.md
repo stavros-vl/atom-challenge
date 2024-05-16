@@ -4,6 +4,7 @@ Transformation project for marketing campaigns and user-level data.
 
 > [!TIP]
 > You can find the connected Looker Studio dashboard [here](https://lookerstudio.google.com/reporting/b92bd64b-aabd-4787-8f40-fb7a600810f2).
+> Also find insights presentation [here](https://docs.google.com/presentation/d/1Dj6IwbUzkkQZFjo5U9dwDqPvacT0ot-Nwa4nyTrhueE/edit?usp=sharing).
 
 ## How to run
 
